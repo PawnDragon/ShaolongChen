@@ -29,7 +29,6 @@ projects:
     # - repo-name
 
  social_media:
- Email: chenshaolong@bupt.edu.cn
   # behance: your_username
   # dribbble: your_username
   # facebook: your_username
@@ -45,7 +44,7 @@ projects:
   # unsplash: your_username
   # vk: your_username
   # website: http://your_website_url
-  # youtube: your_username
+  youtube: 陈少龙
 
 topics:
   - name: CSS
