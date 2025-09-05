@@ -4,7 +4,7 @@
   {% assign metadata_styles = 'd-flex flex-items-center mb-3' %}
 {% endif %}
 
-<img src="{{ user.avatar_url }}" class="circle mb-3" style="max-width: 150px;">
+<img src="/assets/selfphoto.jpg" class="circle mb-3" style="max-width: 150px;">
 <h1 class="{% if site.style == 'dark' %}text-white{% endif %} mb-2 lh-condensed">{% if user.name %}{{ user.name }}{% else %}{{ user.login }}{% endif %}</h1>
 <p class="mb-3 f4 {% if site.style == 'dark' %}text-white{% else %}text-gray{% endif %}">
   {{ user.bio }}
@@ -20,21 +20,24 @@
         </a>
       </div>
     {% endif %}
-    <!-- 修改部分：使用固定的邮箱地址 -->
-    {% assign fixed_email = "shaolongchen0866" %}
+    <!-- 修改部分：显示固定文本 "Email" 并链接到指定邮箱 -->
     <div class="{{ metadata_styles }}">
       {% octicon mail height:20 class:"mr-2 v-align-middle" fill:{{ icon_color }} aria-label:email %}
-      <a href="mailto:{{ fixed_email }}" {% if site.style == 'dark' %}class="text-white"{% endif %}>
-        {{ fixed_email }}
+      <!-- <a> 标签内显示 "Email"，href 指向 mailto:shaolongchen0866 -->
+      <a href="mailto:shaolongchen0866@gmail.com" {% if site.style == 'dark' %}class="text-white"{% endif %}>
+        Email
       </a>
     </div>
     <!-- 修改部分结束 -->
-    {% if user.location %}
-      <div class="{{ metadata_styles }} {% if site.style == 'dark' %}text-white{% endif %}">
-        {% octicon location height:20 class:"mr-2 v-align-middle" fill:{{ icon_color }} aria-label:Location %}
-        {{ user.location }}
-      </div>
-    {% endif %}
+     <div class="{{ metadata_styles }}">
+      <!-- 使用 Octicon 的 'file' 图标 -->
+      {% octicon file height:20 class:"mr-2 v-align-middle" fill:{{ icon_color }} aria-label:CV %}
+      <!-- 假设 CV 文件位于 assets/files/ChenShaolong_CV.pdf -->
+      <!-- 使用 relative_url 确保链接正确 -->
+      <a href="{{ '/assets/CV-ShaolongChen.pdf' | relative_url }}" {% if site.style == 'dark' %}class="text-white"{% endif %} target="_blank" rel="noopener noreferrer">
+        CV
+      </a>
+    </div>
     {% if site.social_media %}
       <div class="d-flex flex-wrap flex-items-start {% if site.layout == 'stacked' %}flex-justify-center mt-1 mt-md-3{% endif %}">
         {% for account in site.social_media %}
