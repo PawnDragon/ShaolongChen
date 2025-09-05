@@ -28,10 +28,10 @@ projects:
     projects:
     # - repo-name
 
-  social_media:
-    email: Email
-    youtube: your_username
-    website: http://your_website_url
+social_media:
+  email: Email
+  youtube: your_username
+  #   website: http://your_website_url
   # behance: your_username
   # dribbble: your_username
   # facebook: your_username
